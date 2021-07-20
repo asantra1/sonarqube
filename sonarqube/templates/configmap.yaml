@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: sonar
 data:
-  SONARQUBE_JDBC_URL: "jdbc:postgresql://postgresql:5432/postgres"
+  SONARQUBE_JDBC_URL: "jdbc:postgresql://postgres:5432/postgresdb"

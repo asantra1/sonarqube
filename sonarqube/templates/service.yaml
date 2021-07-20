@@ -7,13 +7,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port1 }}
-      targetPort: http1
+    - port: {{ .Values.service.port }}
+      targetPort: 9000
       protocol: TCP
-      name: http1
-    - port: {{ .Values.service.port2 }}
-      targetPort: http2
-      protocol: TCP
-      name: http2
+      name: http
   selector:
     {{- include "sonarqube.selectorLabels" . | nindent 4 }}
