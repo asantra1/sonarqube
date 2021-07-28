@@ -37,8 +37,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  port: 9000
+  type: ClusterIP
+  port: 80
 
 ingress:
   enabled: true
@@ -49,10 +49,10 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
     - paths:
-       - path: /sco/sonarqube
+       - path: /sco/sonarqube/
          pathType: Prefix
          service: sonarqube
-         port: port1
+         port: 80
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
